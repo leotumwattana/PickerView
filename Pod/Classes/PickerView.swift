@@ -214,6 +214,11 @@ public class PickerView: UIView {
         super.init(frame: frame)
     }
     
+    deinit {
+        tableView.dataSource = nil
+        tableView.delegate = nil
+    }
+    
     // MARK: Subviews Setup
     
     private func setup() {
